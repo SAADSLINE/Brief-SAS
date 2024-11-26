@@ -1,5 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
+struct Tache {
+    char    titre[41];
+    char    description[91];
+    char    date[31];
+    char    priorite[41];   
+};
+
+int nombre_taches = 0;
+struct Tache taches[1000];
+// Ajouter une tache
+void  ajouter_tache()
+{
+    struct Tache tache;
+
+    if (nombre_taches < 1000)
+    {
+        printf("Entrez le titre de la tache: ");
+        scanf(" %[^\n]", tache.titre);
+        printf("entrez la description de la tache: ");
+        scanf(" %[^\n]",tache.description);
+        printf("entrez la date de la tache: ");
+        scanf(" %[^\n]",tache.date);
+        printf("entrez la priorite de la tache: ");
+        scanf(" %[^\n]",tache.priorite);
+        taches[nombre_taches] = tache;
+        nombre_taches++;
+        printf("l'opération s'est terminée avec succés");
+    }
+
+}
 
 int main()
 {nt choix;
