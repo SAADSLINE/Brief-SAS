@@ -87,7 +87,7 @@ void supprimer_tache() {
     printf("suppresion avec succes !");
 
     }
-adil — Today at 10:10
+
 printf("Voici l'affichage des taches : \n");
      printf("---------------------\n");
      printf("---------------------\n");
