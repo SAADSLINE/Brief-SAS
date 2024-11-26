@@ -42,6 +42,33 @@ void afficher_tache()
         printf("   Priorite:    %s\n", taches[i].priorite);
     }
 }
+// modifier une tâche
+void modifier_tache() 
+{
+    int nombre_tache;
+    struct Tache tache;
+
+    printf("Entrez le nombre de la tache a modifier: ");
+    scanf("%d", &nombre_tache);
+    
+
+    if (nombre_tache < nombre_taches)
+    {
+        printf("Entrez le titre de la tache: ");
+        scanf(" %[^\n]", tache.titre);
+        printf("entrez la description de la tache: ");
+        scanf(" %[^\n]",tache.description);
+        printf("entrez la date de la tache: ");
+        scanf(" %[^\n]",tache.date);
+        printf("entrez la priorite de la tache: ");
+        scanf(" %[^\n]",tache.priorite);
+        taches[nombre_tache - 1] = tache;
+        printf("l'opération s'est terminée avec succés");
+    }
+    else
+        printf("Nombre de tache incorrecte\n");
+    
+}
 
 int main()
 {nt choix;
