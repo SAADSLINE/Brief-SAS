@@ -30,6 +30,18 @@ void  ajouter_tache()
     }
 
 }
+// Afficher la liste des tàches
+void afficher_tache()
+{
+    for(int i = 0; i < nombre_taches; i++)
+    {
+        printf("Tache: %d\n", i + 1);
+        printf("   Titre:       %s\n", taches[i].titre);
+        printf("   Description: %s\n", taches[i].description);
+        printf("   Date:        %s\n", taches[i].date);
+        printf("   Priorite:    %s\n", taches[i].priorite);
+    }
+}
 
 int main()
 {nt choix;
