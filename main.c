@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 struct Tache {
     char    titre[41];
     char    description[91];
@@ -42,6 +43,7 @@ void afficher_tache()
         printf("   Priorite:    %s\n", taches[i].priorite);
     }
 }
+
 // modifier une tâche
 void modifier_tache() 
 {
@@ -69,6 +71,7 @@ void modifier_tache()
         printf("Nombre de tache incorrecte\n");
     
 }
+
 // Supprimer une tàche
 void supprimer_tache() {
 
@@ -86,22 +89,27 @@ void supprimer_tache() {
 }
     printf("suppresion avec succes !");
 
-    }
+}
 
-printf("Voici l'affichage des taches : \n");
-     printf("---------------------\n");
-     printf("---------------------\n");
-    for (int i = 0; i < n; i++) {
-        printf("Tache %d:\n", i + 1);
-        printf("Titre : %s\n", t[i].titre);
-        printf("Description : %s\n", t[i].description);
-        printf("Priorite : %s\n", t[i].priorite);
-        printf("Date : %02d/%02d/%04d\n", t[i].date.jour, t[i].date.mois, t[i].date.annee);
-        printf("---------------------\n");
-    }
 
-int main()
-{nt choix;
+// Filtrer les tàches
+void filtrer_tache()
+{
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+int main(){
+ 
+    int choix;
 
     while (1)
     {
