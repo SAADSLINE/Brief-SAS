@@ -69,6 +69,36 @@ void modifier_tache()
         printf("Nombre de tache incorrecte\n");
     
 }
+// Supprimer une tàche
+void supprimer_tache() {
+
+    int indice,i;
+    printf("Enter indice qui veux supprimer :");
+    scanf("%d",&indice);
+    if(indice<0 || indice>nombre_taches){
+            printf("indice invalide !\n");
+            return ;
+        }else{
+    for(i=indice;i<nombre_taches;i--){
+    taches[i]=taches[i+1];
+}
+    nombre_taches--;
+}
+    printf("suppresion avec succes !");
+
+    }
+adil — Today at 10:10
+printf("Voici l'affichage des taches : \n");
+     printf("---------------------\n");
+     printf("---------------------\n");
+    for (int i = 0; i < n; i++) {
+        printf("Tache %d:\n", i + 1);
+        printf("Titre : %s\n", t[i].titre);
+        printf("Description : %s\n", t[i].description);
+        printf("Priorite : %s\n", t[i].priorite);
+        printf("Date : %02d/%02d/%04d\n", t[i].date.jour, t[i].date.mois, t[i].date.annee);
+        printf("---------------------\n");
+    }
 
 int main()
 {nt choix;
