@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 struct Tache {
     char    titre[41];
     char    description[91];
@@ -74,37 +74,52 @@ void modifier_tache()
 
 // Supprimer une tàche
 void supprimer_tache() {
+    if (nombre_taches == 0) {
+    
+        printf("Aucune tâche à afficher.\n");
+        return;
+    }
 
-    int indice,i;
-    printf("Enter indice qui veux supprimer :");
-    scanf("%d",&indice);
-    if(indice<0 || indice>nombre_taches){
-            printf("indice invalide !\n");
-            return ;
-        }else{
-    for(i=indice;i<nombre_taches;i--){
-    taches[i]=taches[i+1];
-}
-    nombre_taches--;
-}
-    printf("suppresion avec succes !");
+    printf("\n=== Liste des Taches ===\n");
 
-}
+    for(int i = 0; i < nombre_taches; i++)
 
+    {
+    
+        printf("\nTache: %d\n", i + 1);
+        printf("      Titre:       %s\n", taches[i].titre);
+        printf("Description: %s\n", taches[i].description);
+        printf("       Date:        %s\n", taches[i].date);
+        printf("  Priorite:    %s\n", taches[i].priorite);
+    }
+}
 
 // Filtrer les tàches
-void filtrer_tache()
-{
+void filtrer_tache(){
+    
+        char priorite[11];{
+
+          if (nombre_taches == 0){
+            printf("rien de tache pour filter.\n ");
+            return;
+        }
+        printf("entrer la priorite (low/high):");
+        scanf(" %[^\n]" , priorite);
+
+        printf("tache avec priorite %s:\n", priorite);
+        for(int i=0 ; i<nombre_taches ; i++){
+            if(strcmp(taches[i].priorite , priorite) == 0){
+                printf("titre %s\n", taches[i].titre);
+                printf("description %s\n", taches[i].description);
+                printf("date d'echeance %s\n", taches[i].date);
+                printf("date priorite %s\n", taches[i].priorite);
+
+            }
+        }
+    }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+
     
 }
 int main(){
