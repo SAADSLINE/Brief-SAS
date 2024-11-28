@@ -5,7 +5,7 @@ struct Tache {
     char    titre[41];
     char    description[91];
     char    date[31];
-    char    priorite[41];   
+    char    priorite[41];  
 };
 
 int nombre_taches = 0;
@@ -21,7 +21,7 @@ void  ajouter_tache()
         scanf(" %[^\n]", tache.titre);
         printf("entrez la description de la tache: ");
         scanf(" %[^\n]",tache.description);
-        printf("entrez la date de la tache: ");
+        printf("entrez la date de la tache( AAAA-MM-JJ ):");
         scanf(" %[^\n]",tache.date);
         printf("entrez la priorite de la tache: ");
         scanf(" %[^\n]",tache.priorite);
@@ -51,10 +51,10 @@ void modifier_tache()
     struct Tache tache;
 
     printf("Entrez le nombre de la tache a modifier: ");
-    scanf("%d", &nombre_tache);
+    scanf(" %d", &nombre_tache);
     
 
-    if (nombre_tache < nombre_taches)
+    if (nombre_tache <= nombre_taches)
     {
         printf("Entrez le titre de la tache: ");
         scanf(" %[^\n]", tache.titre);
@@ -73,26 +73,29 @@ void modifier_tache()
 }
 
 // Supprimer une tàche
+
 void supprimer_tache() {
-    if (nombre_taches == 0) {
-    
-        printf("Aucune tâche à afficher.\n");
-        return;
+
+    int indice,i;
+
+    printf("Enter le nombre de la tache a supprimer :");
+    scanf("%d",&indice);
+
+    indice--;
+    if(indice<0 || indice>=nombre_taches){
+            printf("nombre invalide !\n");
+            return ;
+    } else {
+    // printf("%d-%d\n", indice, nombre_taches);
+        for(i=indice;i<nombre_taches - 1;i++){
+            taches[i]=taches[i+1];
+        }
+            nombre_taches--;
     }
+    printf("suppresion avec succes !");
 
-    printf("\n=== Liste des Taches ===\n");
-
-    for(int i = 0; i < nombre_taches; i++)
-
-    {
-    
-        printf("\nTache: %d\n", i + 1);
-        printf("      Titre:       %s\n", taches[i].titre);
-        printf("Description: %s\n", taches[i].description);
-        printf("       Date:        %s\n", taches[i].date);
-        printf("  Priorite:    %s\n", taches[i].priorite);
-    }
 }
+
 
 // Filtrer les tàches
 void filtrer_tache(){
